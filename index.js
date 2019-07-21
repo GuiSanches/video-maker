@@ -3,19 +3,20 @@ const robots = {
     input: require('./robots/input'),
     text: require('./robots/text'),
     state: require('./robots/state'),
-    image: require('./robots/image')
+    image: require('./robots/image'),
+    video: require('./robots/video'),
+    youtube: require('./robots/youtube')
 }
 
 async function start() {
     
-    // robots.input()
-    // await robots.text()
+    robots.input()
+    await robots.text()
     await robots.image()
 
-    content = robots.state.loadContent()
-    console.log('ini')
+    const content = robots.state.loadContent()
     console.dir(content, {depth: null})
-    console.log('end')
+    await robots.video()
     
 }
 
